@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 5 oct. 2020, 16:09:13
-    Author     : Vivi
---%>
 <%@page import="java.sql.*"%>
 <%@page import="com.mysql.jdbc.Driver"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,39 +16,6 @@
             ResultSet rs=null;
         %>
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-sm">
-                    <form action="index.jsp" method="post">            
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Nombre</label>
-                            <input type="text" class="form-control" name="nombreForm" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Edad</label>
-                            <input type="text" class="form-control" name="edadForm" placeholder="Ingrese su edad">
-                        </div>       
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <div class="alert alert-primary" role="alert">
-                        <%
-                            String nombre = request.getParameter("nombreForm");
-                            String edad = request.getParameter("edadForm");
-                            if (nombre != null && edad != null) {
-                                //int edadNum = Integer.parseInt(edad);
-                                String saludo = "Hola " + nombre + ", tienes " + edad + " años";
-                                out.print(saludo);
-                            } else {
-                                out.print("Debe ingresar nombre y edad");
-                            }
-                        %>
-                    </div>
-                </div>
-            </div>
             <div class="row">                
                 <div class="col-sm">
                     <table class="table table-striped">
@@ -67,7 +29,7 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Direccion</th>
+                                <th scope="col">País</th>
                                 <th scope="col">Telefono</th>
                                 <th scope="col">Acciones</th>
                             </tr>
@@ -88,7 +50,7 @@
                                 <td><%=rs.getString(4)%></td>
                                 <td>
                                     <a href="editarEmpleado.jsp?id=<%=rs.getString(1)%>&nombre=<%=rs.getString(2)%>&direccion=<%=rs.getString(3)%>&telefono=<%=rs.getString(4)%>"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="borrarEmpleado.jsp"><i class="fas fa-trash"></i></a>
+                                    <a href="borrarEmpleado.jsp?id=<%=rs.getString(1)%>" class="ml-2"><i class="fas fa-trash"></i></a>
                                 </td>
                                 
                             </tr>

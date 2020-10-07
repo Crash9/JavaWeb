@@ -19,7 +19,7 @@
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" required="required">
                         </div>
                         <div class="form-group">
-                            <label for="direccion">Direccion</label>
+                            <label for="direccion">País</label>
                             <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingrese su direccion" required="required">
                         </div>
                         <div class="form-group">
