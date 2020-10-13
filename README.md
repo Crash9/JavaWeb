@@ -1,6 +1,6 @@
 ## Funciones
 
-Alta, baja y modificación de empleados. Se muestra a los mismos por medio de una lista.
+Alta, baja y modificación de empleados. Se muestran a los mismos por medio de una lista.
 
 ## Herramientas utilizadas
 
